@@ -12,10 +12,10 @@
 			let count = 0;
 			const countElement = document.getElementById('count');
 
-			function count() {
+			window.count = function () {
 				count++;
 				countElement.innerText = count;
-			}
+			};
 		</script>
 	</body>
 </html>
