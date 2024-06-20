@@ -7,7 +7,26 @@
 	</head>
 	<body>
 		<h1 id="count">0</h1>
+		<h1 id="startTime">-</h1>
+		<h1 id="currentTime">-</h1>
+		<h1 id="timeDifference">-</h1>
+		<button id="getTime">Get Time</button>
 		<script>
+			const startTime = new Date();
+			const startTimeElement = document.getElementById('startTime');
+			startTimeElement.innerText = startTime.toLocaleTimeString();
+
+			const getTimeButton = document.getElementById('getTime');
+			getTimeButton.addEventListener('click', () => {
+				const currentTime = new Date();
+				const currentTimeElement = document.getElementById('currentTime');
+				currentTimeElement.innerText = currentTime.toLocaleTimeString();
+
+				const timeDifference = currentTime - startTime;
+				const timeDifferenceElement = document.getElementById('timeDifference');
+				timeDifferenceElement.innerText = Math.round(timeDifference / 1000);
+			});
+
 			let count = 0;
 			const countElement = document.getElementById('count');
 
